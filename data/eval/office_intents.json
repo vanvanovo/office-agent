@@ -1,0 +1,858 @@
+{
+  "version": "v2.3",
+  "domain": "office",
+  "note": "办公助手全域意图评测集（会议+器材+知识+周期）；v2.3：A10 按编排层兜底口径修正",
+  "items": [
+    {
+      "id": "N01",
+      "category": "normal",
+      "text": "明天下午3点A栋有哪些空会议室",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "A",
+        "start_time": "15:00"
+      }
+    },
+    {
+      "id": "N02",
+      "category": "normal",
+      "text": "查一下后天上午10点到11点B栋的可用会议室",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "B",
+        "start_time": "10:00",
+        "end_time": "11:00"
+      }
+    },
+    {
+      "id": "N03",
+      "category": "normal",
+      "text": "明天下午2点 8楼 10人以上的会议室有哪些",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "floor": 8,
+        "capacity_min": 10,
+        "start_time": "14:00"
+      }
+    },
+    {
+      "id": "N04",
+      "category": "normal",
+      "text": "帮我订明天下午3点到4点的A-802",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-802",
+        "start_time": "15:00",
+        "end_time": "16:00"
+      }
+    },
+    {
+      "id": "N05",
+      "category": "normal",
+      "text": "预订A-301 后天上午9点到10点",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-301",
+        "start_time": "09:00"
+      }
+    },
+    {
+      "id": "N06",
+      "category": "normal",
+      "text": "订B-202 明天 14:00-15:00",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "B-202",
+        "start_time": "14:00",
+        "end_time": "15:00"
+      }
+    },
+    {
+      "id": "N07",
+      "category": "normal",
+      "text": "把BK20261006-ABC123的预订改到明天下午4点到5点",
+      "expected_intents": [
+        "meeting_reschedule"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "booking_id": "BK20261006-ABC123",
+        "new_start_time": "16:00",
+        "new_end_time": "17:00"
+      }
+    },
+    {
+      "id": "N08",
+      "category": "normal",
+      "text": "把我明天下午3点的预订改到后天上午10点到11点",
+      "expected_intents": [
+        "meeting_reschedule"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "new_start_time": "10:00"
+      }
+    },
+    {
+      "id": "N09",
+      "category": "normal",
+      "text": "取消预订 BK20261006-XYZ789",
+      "expected_intents": [
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "booking_id": "BK20261006-XYZ789"
+      }
+    },
+    {
+      "id": "N10",
+      "category": "normal",
+      "text": "帮我取消A-802明天的会议",
+      "expected_intents": [
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-802"
+      }
+    },
+    {
+      "id": "N11",
+      "category": "normal",
+      "text": "我明天有哪些会",
+      "expected_intents": [
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "N12",
+      "category": "normal",
+      "text": "我的会议室预订",
+      "expected_intents": [
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "N13",
+      "category": "normal",
+      "text": "查下我后天有什么安排",
+      "expected_intents": [
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "N14",
+      "category": "normal",
+      "text": "明天下午2点到3点 8楼 10人以上 有哪些会议室",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "floor": 8,
+        "capacity_min": 10
+      }
+    },
+    {
+      "id": "N15",
+      "category": "normal",
+      "text": "帮我订明天早上9点到10点的B-601",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "B-601",
+        "start_time": "09:00"
+      }
+    },
+    {
+      "id": "N16",
+      "category": "normal",
+      "text": "查下明天上午9点到10点哪个会议室空着",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "start_time": "09:00",
+        "end_time": "10:00"
+      }
+    },
+    {
+      "id": "N17",
+      "category": "normal",
+      "text": "把明天下午的例会改到4点半到5点半",
+      "expected_intents": [
+        "meeting_reschedule"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "new_start_time": "16:30",
+        "new_end_time": "17:30"
+      }
+    },
+    {
+      "id": "N18",
+      "category": "normal",
+      "text": "取消我明天下午的预订",
+      "expected_intents": [
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "N19",
+      "category": "normal",
+      "text": "B栋6楼明天下午3点到4点有空会议室吗",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "B",
+        "floor": 6,
+        "start_time": "15:00"
+      }
+    },
+    {
+      "id": "N20",
+      "category": "normal",
+      "text": "帮我订A-802 明天下午2点到3点 项目评审",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-802",
+        "start_time": "14:00"
+      }
+    },
+    {
+      "id": "N21",
+      "category": "normal",
+      "text": "我下午有哪些预订",
+      "expected_intents": [
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "N22",
+      "category": "normal",
+      "text": "预订明天15:00-16:00的A-501",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-501",
+        "start_time": "15:00",
+        "end_time": "16:00"
+      }
+    },
+    {
+      "id": "N23",
+      "category": "normal",
+      "text": "查明天14:00到15:00可用会议室",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "start_time": "14:00",
+        "end_time": "15:00"
+      }
+    },
+    {
+      "id": "N24",
+      "category": "normal",
+      "text": "帮我看看明天下午4点到5点B栋有哪些会议室",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "B",
+        "start_time": "16:00"
+      }
+    },
+    {
+      "id": "N25",
+      "category": "normal",
+      "text": "我想订明天下午的A-802，14点到15点",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-802",
+        "start_time": "14:00",
+        "end_time": "15:00"
+      }
+    },
+    {
+      "id": "A01",
+      "category": "ambiguous",
+      "text": "帮我订个10人的会议室",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {
+        "capacity_min": 10
+      }
+    },
+    {
+      "id": "A02",
+      "category": "ambiguous",
+      "text": "帮我订个会议室",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A03",
+      "category": "ambiguous",
+      "text": "明天有哪些空会议室",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A04",
+      "category": "ambiguous",
+      "text": "帮我订明天下午的会议室",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A05",
+      "category": "ambiguous",
+      "text": "把这周的例会改到下周",
+      "expected_intents": [
+        "meeting_reschedule"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A06",
+      "category": "ambiguous",
+      "text": "取消一下我下午那个会",
+      "expected_intents": [
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "A07",
+      "category": "ambiguous",
+      "text": "改到4点",
+      "expected_intents": [
+        "meeting_reschedule"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A08",
+      "category": "ambiguous",
+      "text": "找个能开会的地方",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A09",
+      "category": "ambiguous",
+      "text": "帮我查下8楼有没有空的",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A10",
+      "category": "ambiguous",
+      "text": "订个会议室 明天下午3点到4点",
+      "expected_intents": [
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "start_time": "15:00"
+      }
+    },
+    {
+      "id": "A11",
+      "category": "ambiguous",
+      "text": "我下周的会议安排呢",
+      "expected_intents": [
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "A12",
+      "category": "ambiguous",
+      "text": "取消预订",
+      "expected_intents": [
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "A13",
+      "category": "ambiguous",
+      "text": "改期",
+      "expected_intents": [
+        "meeting_reschedule"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "A14",
+      "category": "ambiguous",
+      "text": "有会议室吗",
+      "expected_intents": [
+        "meeting_query"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "O01",
+      "category": "out_of_scope",
+      "text": "今天天气怎么样",
+      "expected_intents": [
+        "out_of_scope"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O02",
+      "category": "out_of_scope",
+      "text": "帮我点个外卖",
+      "expected_intents": [
+        "out_of_scope"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O03",
+      "category": "normal",
+      "text": "这个月工资什么时候发",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O04",
+      "category": "normal",
+      "text": "我想请年假",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O05",
+      "category": "normal",
+      "text": "报销流程是什么",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O06",
+      "category": "out_of_scope",
+      "text": "帮我订张明天去北京的机票",
+      "expected_intents": [
+        "out_of_scope"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O07",
+      "category": "normal",
+      "text": "打印机坏了帮我修",
+      "expected_intents": [
+        "equipment_repair"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O08",
+      "category": "out_of_scope",
+      "text": "推荐一家附近的餐厅",
+      "expected_intents": [
+        "out_of_scope"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O09",
+      "category": "normal",
+      "text": "公司组织架构是什么",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "O10",
+      "category": "out_of_scope",
+      "text": "帮我写个周报",
+      "expected_intents": [
+        "out_of_scope"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "M01",
+      "category": "multi",
+      "text": "明天下午3点A栋有哪些空会议室，另外帮我看看我的预订",
+      "expected_intents": [
+        "meeting_query",
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "A"
+      }
+    },
+    {
+      "id": "M02",
+      "category": "multi",
+      "text": "帮我订明天的会议室，顺便查下我有哪些会",
+      "expected_intents": [
+        "meeting_book",
+        "meeting_my"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "M03",
+      "category": "multi",
+      "text": "把我的A-801预订改到下午4点，再看看我明天还有哪些会",
+      "expected_intents": [
+        "meeting_reschedule",
+        "meeting_my"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "M04",
+      "category": "multi",
+      "text": "取消BK20261006-ABC123，并帮我查下A栋明天的空会议室",
+      "expected_intents": [
+        "meeting_cancel",
+        "meeting_query"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {
+        "booking_id": "BK20261006-ABC123"
+      }
+    },
+    {
+      "id": "M05",
+      "category": "multi",
+      "text": "帮我订A-802明天下午3到4点，另外取消BK20261006-XYZ789",
+      "expected_intents": [
+        "meeting_book",
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "A-802"
+      }
+    },
+    {
+      "id": "M06",
+      "category": "multi",
+      "text": "我明天有哪些会，都在哪间会议室",
+      "expected_intents": [
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "M07",
+      "category": "multi",
+      "text": "后天下午2点的会议室查一下，顺便帮我订个A栋10人的",
+      "expected_intents": [
+        "meeting_query",
+        "meeting_book"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "capacity_min": 10,
+        "building": "A"
+      }
+    },
+    {
+      "id": "M08",
+      "category": "multi",
+      "text": "明天上午10点到11点B栋有空会议室吗，另外把我的B-202预订取消掉",
+      "expected_intents": [
+        "meeting_query",
+        "meeting_cancel"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "B",
+        "room_id": "B-202"
+      }
+    },
+    {
+      "id": "M09",
+      "category": "multi",
+      "text": "取消我明天下午的会，另外看看后天下午3点到4点A栋有空房吗",
+      "expected_intents": [
+        "meeting_cancel",
+        "meeting_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "building": "A",
+        "start_time": "15:00",
+        "end_time": "16:00"
+      }
+    },
+    {
+      "id": "M10",
+      "category": "multi",
+      "text": "帮我订B-601明天10点到11点，再查下我有哪些预订",
+      "expected_intents": [
+        "meeting_book",
+        "meeting_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "B-601",
+        "start_time": "10:00"
+      }
+    },
+    {
+      "id": "M11",
+      "category": "multi",
+      "text": "明天的会议室帮我看看，B栋优先，然后订一间10人的",
+      "expected_intents": [
+        "meeting_query",
+        "meeting_book"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {
+        "building": "B",
+        "capacity_min": 10
+      }
+    },
+    {
+      "id": "E01",
+      "category": "normal",
+      "text": "行政部还有几台投影仪可以借",
+      "expected_intents": [
+        "equipment_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "category": "投影仪",
+        "department": "行政部"
+      }
+    },
+    {
+      "id": "E02",
+      "category": "normal",
+      "text": "P001 现在能借吗",
+      "expected_intents": [
+        "equipment_query"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "asset_id": "P001"
+      }
+    },
+    {
+      "id": "E03",
+      "category": "ambiguous",
+      "text": "我要报修打印机",
+      "expected_intents": [
+        "equipment_repair"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {
+        "keyword": "打印机"
+      }
+    },
+    {
+      "id": "E04",
+      "category": "normal",
+      "text": "P004 画面偏色 帮我报修",
+      "expected_intents": [
+        "equipment_repair"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "asset_id": "P004"
+      }
+    },
+    {
+      "id": "E05",
+      "category": "normal",
+      "text": "我的工单",
+      "expected_intents": [
+        "equipment_my"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "E06",
+      "category": "normal",
+      "text": "帮我催一下工单 RT20261005-AB12",
+      "expected_intents": [
+        "equipment_urge"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "ticket_id": "RT20261005-AB12"
+      }
+    },
+    {
+      "id": "K01",
+      "category": "normal",
+      "text": "器材借用期限是多久",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "K02",
+      "category": "normal",
+      "text": "报修的响应时限是多久",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "K03",
+      "category": "normal",
+      "text": "新员工怎么连 WiFi",
+      "expected_intents": [
+        "kb_qa"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    },
+    {
+      "id": "A15",
+      "category": "ambiguous",
+      "text": "帮我报修一下",
+      "expected_intents": [
+        "equipment_repair"
+      ],
+      "expected_need_clarify": true,
+      "expected_slots": {}
+    },
+    {
+      "id": "R01",
+      "category": "normal",
+      "text": "每周一10点到11点帮我订8周B-601",
+      "expected_intents": [
+        "meeting_recur"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "room_id": "B-601",
+        "weekday": 1,
+        "weeks": 8,
+        "start_time": "10:00"
+      }
+    },
+    {
+      "id": "R02",
+      "category": "normal",
+      "text": "每周三下午2点到3点的例会订到月底",
+      "expected_intents": [
+        "meeting_recur"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {
+        "weekday": 3,
+        "start_time": "14:00",
+        "end_time": "15:00"
+      }
+    },
+    {
+      "id": "R03",
+      "category": "ambiguous",
+      "text": "帮我订个每周的例会",
+      "expected_intents": [
+        "meeting_recur"
+      ],
+      "expected_need_clarify": false,
+      "expected_slots": {}
+    }
+  ]
+}
